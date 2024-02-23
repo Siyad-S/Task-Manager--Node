@@ -4,11 +4,9 @@ const taskModel = require("../models/taskManager")
 // POST 
 const postTask = asyncHandler(async (req, res) => {
     try {
-        const { title, tasks, pin, type } = req.body;
+        const { tasks, pin} = req.body;
 
         const savedTaskBlock = await taskModel.create({
-            title,
-            type,
             tasks,
             pin
         });

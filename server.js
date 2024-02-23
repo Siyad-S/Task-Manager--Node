@@ -3,7 +3,9 @@ const app = express()
 const port = 4000
 const connectDb = require("./configs/dbConnection")
 const taskRoute = require("./routes/taskManager")
+const cors = require("cors")
 
+app.use(cors())
 app.use(express.json())
 app.use("/tasks", taskRoute)
 
